@@ -1,18 +1,24 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    int num, originalNum, remainder, result = 0;
+    printf("Enter a three-digit integer: ");
+    scanf("%d", &num);
+    originalNum = num;
 
-    // Computes quotient
-    quotient = dividend / divisor;
+    while (originalNum != 0) {
+       // remainder contains the last digit
+        remainder = originalNum % 10;
+        
+       result += remainder * remainder * remainder;
+        
+       // removing last digit from the orignal number
+       originalNum /= 10;
+    }
 
-    // Computes remainder
-    remainder = dividend % divisor;
+    if (result == num)
+        printf("%d is an Armstrong number.", num);
+    else
+        printf("%d is not an Armstrong number.", num);
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
     return 0;
 }
