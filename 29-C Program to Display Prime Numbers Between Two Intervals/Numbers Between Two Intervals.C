@@ -38,3 +38,8 @@ int main() {
 
    return 0;
 }
+
+//OUTPUT
+//Enter two numbers(intervals): 20 
+//50
+//Prime numbers between 20 and 50 are: 23 29 31 37 41 43 47
