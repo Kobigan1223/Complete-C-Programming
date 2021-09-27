@@ -5,6 +5,8 @@ int main() {
     scanf("%d", &num);
     originalNum = num;
 
+
+//ab
     while (originalNum != 0) {
        // remainder contains the last digit
         remainder = originalNum % 10;
