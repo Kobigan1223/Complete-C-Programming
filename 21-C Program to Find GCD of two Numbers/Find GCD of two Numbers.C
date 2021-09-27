@@ -1,18 +1,19 @@
 #include <stdio.h>
-int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+int main()
+{
+    int n1, n2, i, gcd;
 
-    // Computes quotient
-    quotient = dividend / divisor;
+    printf("Enter two integers: ");
+    scanf("%d %d", &n1, &n2);
 
-    // Computes remainder
-    remainder = dividend % divisor;
+    for(i=1; i <= n1 && i <= n2; ++i)
+    {
+        // Checks if i is factor of both integers
+        if(n1%i==0 && n2%i==0)
+            gcd = i;
+    }
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    printf("G.C.D of %d and %d is %d", n1, n2, gcd);
+
     return 0;
 }
