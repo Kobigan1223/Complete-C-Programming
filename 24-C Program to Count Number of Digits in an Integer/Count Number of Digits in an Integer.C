@@ -1,18 +1,17 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+  long long n;
+  int count = 0;
+  printf("Enter an integer: ");
+  scanf("%lld", &n);
+ 
+  // iterate at least once, then until n becomes 0
+  // remove last digit from n in each iteration
+  // increase count by 1 in each iteration
+  do {
+    n /= 10;
+    ++count;
+  } while (n != 0);
 
-    // Computes quotient
-    quotient = dividend / divisor;
-
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
-    return 0;
+  printf("Number of digits: %d", count);
 }
