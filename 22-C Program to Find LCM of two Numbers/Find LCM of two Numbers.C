@@ -1,18 +1,18 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    int n1, n2, max;
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &n1, &n2);
 
-    // Computes quotient
-    quotient = dividend / divisor;
+    // maximum number between n1 and n2 is stored in max
+    max = (n1 > n2) ? n1 : n2;
 
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    while (1) {
+        if (max % n1 == 0 && max % n2 == 0) {
+            printf("The LCM of %d and %d is %d.", n1, n2, max);
+            break;
+        }
+        ++max;
+    }
     return 0;
 }
