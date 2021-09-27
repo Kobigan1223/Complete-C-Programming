@@ -1,18 +1,16 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    int base, exp;
+    long double result = 1.0;
+    printf("Enter a base number: ");
+    scanf("%d", &base);
+    printf("Enter an exponent: ");
+    scanf("%d", &exp);
 
-    // Computes quotient
-    quotient = dividend / divisor;
-
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    while (exp != 0) {
+        result *= base;
+        --exp;
+    }
+    printf("Answer = %.0Lf", result);
     return 0;
 }
