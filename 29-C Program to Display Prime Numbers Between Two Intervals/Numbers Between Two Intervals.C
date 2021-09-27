@@ -7,14 +7,17 @@ int main() {
    printf("Prime numbers between %d and %d are: ", low, high);
 
    // iteration until low is not equal to high
+
    while (low < high) {
       flag = 0;
 
       // ignore numbers less than 2
+
       if (low <= 1) {
          ++low;
          continue;
       }
+
 
       // if low is a non-prime number, flag will be 1
       for (i = 2; i <= low / 2; ++i) {
