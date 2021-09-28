@@ -1,18 +1,16 @@
 #include <stdio.h>
+int addNumbers(int n);
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
-
-    // Computes quotient
-    quotient = dividend / divisor;
-
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+    printf("Sum = %d", addNumbers(num));
     return 0;
+}
+
+int addNumbers(int n) {
+    if (n != 0)
+        return n + addNumbers(n - 1);
+    else
+        return n;
 }
