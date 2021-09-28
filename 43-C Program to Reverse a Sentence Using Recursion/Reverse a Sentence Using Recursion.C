@@ -1,18 +1,16 @@
 #include <stdio.h>
+void reverseSentence();
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
-
-    // Computes quotient
-    quotient = dividend / divisor;
-
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    printf("Enter a sentence: ");
+    reverseSentence();
     return 0;
+}
+
+void reverseSentence() {
+    char c;
+    scanf("%c", &c);
+    if (c != '\n') {
+        reverseSentence();
+        printf("%c", c);
+    }
 }
