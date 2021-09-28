@@ -1,18 +1,29 @@
 #include <stdio.h>
-int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+#include <math.h>
 
-    // Computes quotient
-    quotient = dividend / divisor;
+int convertDecimalToOctal(int decimalNumber);
+int main()
+{
+    int decimalNumber;
 
-    // Computes remainder
-    remainder = dividend % divisor;
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimalNumber);
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    printf("%d in decimal = %d in octal", decimalNumber, convertDecimalToOctal(decimalNumber));
+
     return 0;
+}
+
+int convertDecimalToOctal(int decimalNumber)
+{
+    int octalNumber = 0, i = 1;
+
+    while (decimalNumber != 0)
+    {
+        octalNumber += (decimalNumber % 8) * i;
+        decimalNumber /= 8;
+        i *= 10;
+    }
+
+    return octalNumber;
 }
