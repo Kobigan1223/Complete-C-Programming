@@ -1,18 +1,34 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+  int n;
+  double *data;
+  printf("Enter the total number of elements: ");
+  scanf("%d", &n);
 
-    // Computes quotient
-    quotient = dividend / divisor;
+  // Allocating memory for n elements
+  data = (double *)calloc(n, sizeof(double));
+  if (data == NULL) {
+  printf("Error!!! memory not allocated.");
+  exit(0);
+  }
 
-    // Computes remainder
-    remainder = dividend % divisor;
+  // Storing numbers entered by the user.
+  for (int i = 0; i < n; ++i) {
+  printf("Enter number%d: ", i + 1);
+  scanf("%lf", data + i);
+  }
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
-    return 0;
+  // Finding the largest number
+  for (int i = 1; i < n; ++i) {
+    if (*data < *(data + i)) {
+      *data = *(data + i);
+    }
+  }
+  printf("Largest number = %.2lf", *data);
+
+  free(data);
+
+  return 0;
 }
