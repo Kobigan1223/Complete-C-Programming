@@ -1,18 +1,19 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    char str[1000], ch;
+    int count = 0;
 
-    // Computes quotient
-    quotient = dividend / divisor;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
 
-    // Computes remainder
-    remainder = dividend % divisor;
+    printf("Enter a character to find its frequency: ");
+    scanf("%c", &ch);
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    for (int i = 0; str[i] != '\0'; ++i) {
+        if (ch == str[i])
+            ++count;
+    }
+
+    printf("Frequency of %c = %d", ch, count);
     return 0;
 }
