@@ -1,18 +1,23 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+  int n;
+  double arr[100];
+  printf("Enter the number of elements (1 to 100): ");
+  scanf("%d", &n);
 
-    // Computes quotient
-    quotient = dividend / divisor;
+  for (int i = 0; i < n; ++i) {
+    printf("Enter number%d: ", i + 1);
+    scanf("%lf", &arr[i]);
+  }
 
-    // Computes remainder
-    remainder = dividend % divisor;
+  // storing the largest number to arr[0]
+  for (int i = 1; i < n; ++i) {
+    if (arr[0] < arr[i]) {
+      arr[0] = arr[i];
+    }
+  }
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
-    return 0;
+  printf("Largest element = %.2lf", arr[0]);
+
+  return 0;
 }
