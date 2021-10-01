@@ -1,18 +1,32 @@
 #include <stdio.h>
+struct student {
+    char firstName[50];
+    int roll;
+    float marks;
+} s[5];
+
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    int i;
+    printf("Enter information of students:\n");
 
-    // Computes quotient
-    quotient = dividend / divisor;
+    // storing information
+    for (i = 0; i < 5; ++i) {
+        s[i].roll = i + 1;
+        printf("\nFor roll number%d,\n", s[i].roll);
+        printf("Enter first name: ");
+        scanf("%s", s[i].firstName);
+        printf("Enter marks: ");
+        scanf("%f", &s[i].marks);
+    }
+    printf("Displaying Information:\n\n");
 
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    // displaying information
+    for (i = 0; i < 5; ++i) {
+        printf("\nRoll number: %d\n", i + 1);
+        printf("First name: ");
+        puts(s[i].firstName);
+        printf("Marks: %.1f", s[i].marks);
+        printf("\n");
+    }
     return 0;
 }
