@@ -1,18 +1,10 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    char s[] = "Programming is fun";
+    int i;
 
-    // Computes quotient
-    quotient = dividend / divisor;
-
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    for (i = 0; s[i] != '\0'; ++i);
+    
+    printf("Length of the string: %d", i);
     return 0;
 }
