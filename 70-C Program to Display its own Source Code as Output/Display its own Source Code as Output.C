@@ -1,18 +1,17 @@
 #include <stdio.h>
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    FILE *fp;
+    int c;
+   
+    // open the current input file
+    fp = fopen(__FILE__,"r");
 
-    // Computes quotient
-    quotient = dividend / divisor;
-
-    // Computes remainder
-    remainder = dividend % divisor;
-
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    do {
+         c = getc(fp);   // read character 
+         putchar(c);     // display character
+    }
+    while(c != EOF);  // loop until the end of file is reached
+    
+    fclose(fp);
     return 0;
 }
