@@ -1,18 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 int main() {
-    int dividend, divisor, quotient, remainder;
-    printf("Enter dividend: ");
-    scanf("%d", &dividend);
-    printf("Enter divisor: ");
-    scanf("%d", &divisor);
+    char sentence[1000];
 
-    // Computes quotient
-    quotient = dividend / divisor;
+    // creating file pointer to work with files
+    FILE *fptr;
 
-    // Computes remainder
-    remainder = dividend % divisor;
+    // opening file in writing mode
+    fptr = fopen("program.txt", "w");
 
-    printf("Quotient = %d\n", quotient);
-    printf("Remainder = %d", remainder);
+    // exiting program 
+    if (fptr == NULL) {
+        printf("Error!");
+        exit(1);
+    }
+    printf("Enter a sentence:\n");
+    fgets(sentence, sizeof(sentence), stdin);
+    fprintf(fptr, "%s", sentence);
+    fclose(fptr);
     return 0;
 }
