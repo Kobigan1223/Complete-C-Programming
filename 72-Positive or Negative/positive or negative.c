@@ -13,3 +13,6 @@ void main()
     else
         printf("0 is neither positive nor negative");
 }
+
+
+//Output
