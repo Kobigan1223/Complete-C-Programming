@@ -15,10 +15,15 @@ void main()
 }
 
 
-//Output
+//Output 01
 //Enter a number:
 //0
 //0 is neither positive nor negative
-//
+
+//Output 02
+//Enter a number:
+//-3
+//-3 is a negative number
+
 //
 //
