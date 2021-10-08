@@ -16,7 +16,9 @@ void main()
 
 
 //Output
-//
+//Enter a number:
+//0
+//0 is neither positive nor negative
 //
 //
 //
